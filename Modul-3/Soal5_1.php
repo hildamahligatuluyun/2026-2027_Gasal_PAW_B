@@ -1,45 +1,44 @@
 <?php
-$students = array(
+$data = array(
     array("Alex", "220401", "0812345678"),
     array("Bianca", "220402", "0812345687"),
     array("Candice", "220403", "0812345665")
 );
 
-echo "Data awal:<br>";
-echo "students = (<br>";
-$out_awal = array();
-foreach($students as $row) {
-    $out_awal[] = '("' . implode('", "', $row) . '")';
+echo "Data awal: <br>";
+echo "students = ( <br>";
+
+for ($i = 0; $i < count($data); $i++) {
+    echo '("' . $data[$i][0] . '", "' . $data[$i][1] . '", "' . $data[$i][2] . '"), <br>';
 }
-echo implode(",<br>", $out_awal) . "<br>)<br><br>";
 
-$students[] = array("Daniel", "220404", "0812345611");
-$students[] = array("Elena", "220405", "0812345622");
-$students[] = array("Fiona", "220406", "0812345633");
-$students[] = array("Gabe", "220407", "0812345644");
-$students[] = array("Hannah", "220408", "0812345655");
+echo ") <br><br>";
 
-echo "Data setelah ditambah 5 data lain:<br>";
-echo "students = (<br>";
-$out_baru = array();
-foreach($students as $row) {
-    $out_baru[] = '("' . implode('", "', $row) . '")';
+$data[] = array("Daniel", "220404", "0812345611");
+$data[] = array("Elena", "220405", "0812345622");
+$data[] = array("Fiona", "220406", "0812345633");
+$data[] = array("Gabe", "220407", "0812345644");
+$data[] = array("Hannah", "220408", "0812345655");
+
+echo "Data setelah ditambah 5 data lain: <br>";
+echo "students = ( <br>";
+
+for ($i = 0; $i < count($data); $i++) {
+    echo '("' . $data[$i][0] . '", "' . $data[$i][1] . '", "' . $data[$i][2] . '"), <br>';
 }
-echo implode(",<br>", $out_baru) . "<br>)<br><br>";
 
-echo "<table border='1' cellpadding='3' cellspacing='0'>";
-echo "<tr>
-        <th>Name</th>
-        <th>NIM</th>
-        <th>Mobile</th>
-      </tr>";
+echo ") <br><br>";
 
-foreach ($students as $row) {
+echo "<table border='1' cellspacing='0' cellpadding='3'>";
+echo "<tr><th>Name</th><th>NIM</th><th>Mobile</th></tr>";
+
+for ($i = 0; $i < count($data); $i++) {
     echo "<tr>";
-    echo "<td>" . $row[0] . "</td>";
-    echo "<td>" . $row[1] . "</td>";
-    echo "<td>" . $row[2] . "</td>";
+    echo "<td>" . $data[$i][0] . "</td>";
+    echo "<td>" . $data[$i][1] . "</td>";
+    echo "<td>" . $data[$i][2] . "</td>";
     echo "</tr>";
 }
+
 echo "</table>";
 ?>
